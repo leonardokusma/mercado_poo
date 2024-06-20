@@ -1,10 +1,15 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package dominio;
 
-import java.io.Serializable;
-
-public class Cargo implements Serializable {
-
-    private static Integer idCargo;
+/**
+ *
+ * @author João Ferrari
+ */
+public class Cargo {
+    private int idCargo;
     private String cargo;
     private String descricao;
     private double salario;
@@ -16,42 +21,35 @@ public class Cargo implements Serializable {
         this.salario = salario;
     }
 
-    public static Integer getIdCargo() {
+    public int getIdCargo() {
         return idCargo;
-    }
-
-    public static void setIdCargo(Integer idCargo) {
-        Cargo.idCargo = idCargo;
     }
 
     public String getCargo() {
         return cargo;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
-    }
-
     public String getDescricao() {
         return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
     }
 
     public double getSalario() {
         return salario;
     }
 
+    public void setIdCargo(int id) {
+        this.idCargo = id;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     public void setSalario(double salario) {
         this.salario = salario;
     }
-
-    @Override
-    public String toString() {
-        return "Cargo{" + "cargo=" + cargo + ", descricao=" + descricao + ", salario=" + salario + '}';
-    }
-    
-
 }
