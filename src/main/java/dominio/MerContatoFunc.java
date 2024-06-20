@@ -10,7 +10,7 @@ package dominio;
  */
 public class MerContatoFunc {
     private int idMerContatoFunc;
-    private MerFuncionario funcionario;
+    private MFuncionario funcionario;
     private String telefone;
     private String telefoneEmp;
     private String email;
@@ -26,7 +26,7 @@ public class MerContatoFunc {
         return idMerContatoFunc;
     }
 
-    public MerFuncionario getFuncionario() {
+    public MFuncionario getFuncionario() {
         return funcionario;
     }
 
@@ -46,7 +46,7 @@ public class MerContatoFunc {
         this.idMerContatoFunc = id;
     }
 
-    public void setFuncionario(MerFuncionario funcionario) {
+    public void setFuncionario(MFuncionario funcionario) {
         this.funcionario = funcionario;
     }
 
@@ -64,7 +64,7 @@ public class MerContatoFunc {
 }
 
 /*
-MerFuncionario func = new MerFuncionario(1, "João"); 
+MFuncionario func = new MFuncionario(1, "João"); 
 
         incluirContato(new MerContatoFunc(1, "123456789", "987654321", "joao@email.com"));
         incluirContato(new MerContatoFunc(2, "456789123", "321654987", "maria@email.com"));

@@ -4,13 +4,14 @@
  */
 package dominio;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author leona
  */
-public class MFuncionario extends MPessoa {
+public class MFuncionario extends MPessoa implements Serializable{
 
     private int idFuncionario;
     private int idCargo;

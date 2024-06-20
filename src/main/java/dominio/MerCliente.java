@@ -8,23 +8,20 @@ package dominio;
  *
  * @author João Ferrari
  */
-import com.mycompany.mer.ClienteNaoEncontradoException;
-import com.mycompany.mer.GerenciadorCliente;
+
 import dominio.MerEnderecoClien;
 import dominio.MerContatoClien;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import java.util.Optional;
 
-public class MerCliente extends MerPessoa{
+
+public class MerCliente extends MPessoa{
     private int idMerCliente;
     private Date dataNascimento;
     private MerContatoClien contatoClien;
     private MerEnderecoClien enderecoClien;
 
     public MerCliente(String nome, String cpf, Date dataNascimento, MerContatoClien contato, MerEnderecoClien endereco) {
-        super(nome, cpf);
+        super(nome, cpf,dataNascimento);
         this.dataNascimento = dataNascimento;
         this.contatoClien = contato;
         this.enderecoClien = endereco;
