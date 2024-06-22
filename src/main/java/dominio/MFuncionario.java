@@ -5,35 +5,31 @@
 package dominio;
 
 import java.io.Serializable;
+
 import java.util.Date;
 
 /**
  *
  * @author leona
  */
-public class MerFuncionario extends MerPessoa implements Serializable{
-    private static long id = 1;
-    private long idFuncionario;
+public class MFuncionario extends MPessoa implements Serializable {
+
+    private int idFuncionario;
     private int idCargo;
     private int idEndereco;
     private int idContato;
     private Date admissao;
 
-    public MerFuncionario(String nome, String cpf, Date nascimento, int idCargo, int idEndereco, int idContato, Date admissao) {
+    public MFuncionario(String nome, String cpf, Date nascimento, int idFuncionario, int idCargo, int idEndereco, int idContato, Date admissao) {
         super(nome, cpf, nascimento);
-        this.idFuncionario = MerFuncionario.id;
-        MerFuncionario.setId(id++);
+        this.idFuncionario = idFuncionario;
         this.idCargo = idCargo;
         this.idEndereco = idEndereco;
         this.idContato = idContato;
         this.admissao = admissao;
     }
 
-    public static void setId(long id) {
-        MerFuncionario.id = id;
-    }
-
-    public long getIdFuncionario() {
+    public int getIdFuncionario() {
         return idFuncionario;
     }
 

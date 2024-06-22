@@ -4,11 +4,10 @@
  */
 package dominio;
 
-/**
- *
- * @author João Ferrari
- */
-public class MerEnderecoFunc {
+import java.io.Serializable;
+
+
+public class MerEnderecoFunc implements Serializable{
     private int idMerEnderecoFunc;
     private MerFuncionario funcionario;
     private String rua;

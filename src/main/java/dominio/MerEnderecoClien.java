@@ -4,11 +4,13 @@
  */
 package dominio;
 
+import java.io.Serializable;
+
 /**
  *
  * @author João Ferrari
  */
-public class MerEnderecoClien {
+public class MerEnderecoClien implements Serializable{
     private int idEnderecoClien;
     private String rua;
     private long numero;

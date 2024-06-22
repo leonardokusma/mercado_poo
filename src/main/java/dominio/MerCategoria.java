@@ -1,6 +1,8 @@
 package dominio;
 
-public class MerCategoria {
+import java.io.Serializable;
+
+public class MerCategoria implements Serializable{
 
     private static long id = 1;
     private long idMerCategoria;

@@ -1,8 +1,10 @@
 
 package dominio;
 
+import java.io.Serializable;
 
-public class MerEstoque {
+
+public class MerEstoque implements Serializable{
     private static long id = 1;
     private long idMerEstoque;
     private String descricao;
@@ -33,6 +35,19 @@ public class MerEstoque {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public MerEnderecoEstoque getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(MerEnderecoEstoque endereco) {
+        this.endereco = endereco;
+    }
+
+    @Override
+    public String toString() {
+        return "MerEstoque{" + "idMerEstoque=" + idMerEstoque + ", descricao=" + descricao + ", endereco=" + endereco + '}';
     }
 
 }

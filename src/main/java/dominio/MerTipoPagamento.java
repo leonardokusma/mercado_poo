@@ -4,11 +4,9 @@
  */
 package dominio;
 
-/**
- *
- * @author João Ferrari
- */
-public class MerTipoPagamento {
+import java.io.Serializable;
+
+public class MerTipoPagamento implements Serializable{
     private int idMerTipoPagamento;
     private String tipo;
 
