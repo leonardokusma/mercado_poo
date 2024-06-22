@@ -128,6 +128,10 @@ public class Banco implements Serializable {
         }
         return null;
     }
+    
+    public Cargo buscaCargo(long id){
+        return Banco.getCargos().get((int) id - 1 );
+    }
 
     public static void adicionaCliente(MerCliente cliente) {
         Banco.getClientes().add(cliente);

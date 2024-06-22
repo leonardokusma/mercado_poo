@@ -8,7 +8,8 @@ import java.io.Serializable;
 
 
 public class MerEnderecoFunc implements Serializable{
-    private int idMerEnderecoFunc;
+    private static long id = 1;
+    private long idMerEnderecoFunc;
     private MerFuncionario funcionario;
     private String rua;
     private long numero;
@@ -19,9 +20,9 @@ public class MerEnderecoFunc implements Serializable{
     private String cep;
     private String descricao;
 
-    public MerEnderecoFunc(int id, MerFuncionario funcionario, String rua, long numero, String bairro, String cidade, String estado, String pontoRef, String cep, String descricao) {
-        this.idMerEnderecoFunc = id;
-        this.funcionario = funcionario;
+    public MerEnderecoFunc(String rua, long numero, String bairro, String cidade, String estado, String pontoRef, String cep) {
+        this.idMerEnderecoFunc = MerEnderecoFunc.id;
+        MerEnderecoFunc.setId(id++);
         this.rua = rua;
         this.numero = numero;
         this.bairro = bairro;
@@ -29,10 +30,13 @@ public class MerEnderecoFunc implements Serializable{
         this.estado = estado;
         this.pontoRef = pontoRef;
         this.cep = cep;
-        this.descricao = descricao;
     }
 
-    public int getIdMerEnderecoFunc() {
+    public static void setId(long id) {
+        MerEnderecoFunc.id = id;
+    }
+
+    public long getIdMerEnderecoFunc() {
         return idMerEnderecoFunc;
     }
 

@@ -7,25 +7,22 @@ package dominio;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author leona
- */
+
 public class MerFuncionario extends MerPessoa implements Serializable{
     private static long id = 1;
     private long idFuncionario;
-    private int idCargo;
-    private int idEndereco;
-    private int idContato;
+    private Cargo cargo;
+    private MerEnderecoFunc endereco;
+    private MerContatoFunc contato;
     private Date admissao;
 
-    public MerFuncionario(String nome, String cpf, Date nascimento, int idCargo, int idEndereco, int idContato, Date admissao) {
+    public MerFuncionario(String nome, String cpf, Date nascimento, Cargo cargo, MerEnderecoFunc endereco, MerContatoFunc contato, Date admissao) {
         super(nome, cpf, nascimento);
         this.idFuncionario = MerFuncionario.id;
         MerFuncionario.setId(id++);
-        this.idCargo = idCargo;
-        this.idEndereco = idEndereco;
-        this.idContato = idContato;
+        this.cargo = cargo;
+        this.endereco = endereco;
+        this.contato = contato;
         this.admissao = admissao;
     }
 
@@ -41,28 +38,28 @@ public class MerFuncionario extends MerPessoa implements Serializable{
         this.idFuncionario = idFuncionario;
     }
 
-    public int getIdCargo() {
-        return idCargo;
+    public Cargo getIdCargo() {
+        return cargo;
     }
 
-    public void setIdCargo(int idCargo) {
-        this.idCargo = idCargo;
+    public void setIdCargo(Cargo cargo) {
+        this.cargo = cargo;
     }
 
-    public int getIdEndereco() {
-        return idEndereco;
+    public MerEnderecoFunc getIdEndereco() {
+        return endereco;
     }
 
-    public void setIdEndereco(int idEndereco) {
-        this.idEndereco = idEndereco;
+    public void setIdEndereco(MerEnderecoFunc endereco) {
+        this.endereco = endereco;
     }
 
-    public int getIdContato() {
-        return idContato;
+    public MerContatoFunc getIdContato() {
+        return contato;
     }
 
-    public void setIdContato(int idContato) {
-        this.idContato = idContato;
+    public void setIdContato(MerContatoFunc contato) {
+        this.contato = contato;
     }
 
     public Date getAdmissao() {

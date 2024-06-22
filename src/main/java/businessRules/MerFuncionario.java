@@ -1,13 +1,17 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package businessRules;
 
-import static java.time.InstantSource.system;
+import java.sql.SQLOutput;
 import java.util.Date;
 import java.util.Scanner;
 
-public class MerCliente {
+public class MerFuncionario {
 
     private static boolean validarCPF(String cpf) {
-        
+
         cpf = cpf.replaceAll("[^0-9]", "");
 
         // Verifica se o CPF possui 11 dígitos
@@ -46,32 +50,38 @@ public class MerCliente {
             return false;
         }
     }
-    
-    public static dominio.MerCliente cadastrar(){
+
+    public static dominio.MerFuncionario cadastrarFuncionario() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("------CADASTRO DE CLIENTE------");
-        System.out.println("DIGITE O NOME DO CLIENTE:");
+        dominio.Banco banco = new dominio.Banco();
+        System.out.println("CADASTRAR FUNCIONARIO");
+        System.out.println("DIGITE O NOME DO FUNCIONARIO:");
         String nome = sc.nextLine();
-        System.out.println("DIGITE O CPF DO CLIENTE:");
+        System.out.println("DIGITE O CPF DO FUNCIONARIO:");
         String cpf = sc.nextLine();
-        if(!MerCliente.validarCPF(cpf)){
-            System.out.println("CPF INVALIDO");
-            System.out.println("DIGITE O CPF DO CLIENTE:");
+        if (!MerFuncionario.validarCPF(cpf)) {
+            System.out.println("CPF INVALIDO!");
+            System.out.println("DIGITE O CPF DO FUNCIONARIO:");
             cpf = sc.nextLine();
         }
-        System.out.println("DIGITE A DATA DE NASCIMENTO DO CLIENTE:");
+        System.out.println("DIGITE A DATA DE NASCIMENTO DO FUNCIONARIO:");
         Date nascimento = DataFormatador.datas(sc.nextLine());
-        dominio.MerCliente cliente = new dominio.MerCliente(nome,cpf,nascimento);
-        // cadastro do contato
-        System.out.println("DIGITE O TELEFONE DO CLIENTE:");
+        System.out.println("SELECIONE UM CARGO:");
+        for (dominio.Cargo cargo : dominio.Banco.getCargos()) {
+            System.out.println(cargo);
+        }
+        long idCargo = sc.nextLong();
+        dominio.MerEnderecoFunc endereco  = MerEnderecoFuncionario.cadastroEndereco();
+        // cadastro do contato do funcionario
+        System.out.println("DIGITE O TELEFONE DO FUNCIONARIO:");
         String telefone = sc.nextLine();
+        System.out.println("DIGITE O TELEFONE DO SETOR DO FUNCIONARIO:");
+        String telefoneEmpresa = sc.nextLine();
         System.out.println("DIGITE O EMAIL DO CLIENTE:");
         String email = sc.nextLine();
-        dominio.MerContatoClien contato = new dominio.MerContatoClien(telefone, email);
-        cliente.setContatoClien(contato);
-        // cadastro do endereco
-        cliente.setEnderecoClien(MerEnderecoClien.cadastroEndereco());
-        return cliente;
+        dominio.MerContatoFunc contato = new dominio.MerContatoFunc(telefone, telefoneEmpresa, email);
+        
+        return new dominio.MerFuncionario(nome, cpf, nascimento,banco.buscaCargo(idCargo) , endereco, contato, nascimento);
     }
 
 }

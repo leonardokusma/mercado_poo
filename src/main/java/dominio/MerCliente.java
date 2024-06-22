@@ -16,16 +16,41 @@ import java.util.Date;
 
 
 public class MerCliente extends MerPessoa implements Serializable{
+    private static long id = 1;
     private long idMerCliente;
     private Date dataNascimento;
     private MerContatoClien contatoClien;
     private MerEnderecoClien enderecoClien;
+    
+    public MerCliente(String nome, String cpf, Date dataNascimento){
+        super(nome, cpf,dataNascimento);
+        this.idMerCliente = MerCliente.id;
+        MerCliente.setId(id++);
+    }
 
     public MerCliente(String nome, String cpf, Date dataNascimento, MerContatoClien contato, MerEnderecoClien endereco) {
         super(nome, cpf,dataNascimento);
+        this.idMerCliente = MerCliente.id;
+        MerCliente.setId(id++);
         this.dataNascimento = dataNascimento;
         this.contatoClien = contato;
         this.enderecoClien = endereco;
+    }
+
+    public static void setId(long id) {
+        MerCliente.id = id;
+    }
+
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public void setContatoClien(MerContatoClien contatoClien) {
+        this.contatoClien = contatoClien;
+    }
+
+    public void setEnderecoClien(MerEnderecoClien enderecoClien) {
+        this.enderecoClien = enderecoClien;
     }
 
     public long getIdMerCliente() {
