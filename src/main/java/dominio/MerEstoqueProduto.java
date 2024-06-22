@@ -11,7 +11,7 @@ public class MerEstoqueProduto {
     private MerFornePrincipal forne;
     private MerForneAlternativo forneAlternativo;
 
-    public MerEstoqueProduto(double preco, int qtd, MerProduto produto, MerEstroque estoque, MerFornePrincipal forne, MerForneAlternativo forneAlternativo) {
+    public MerEstoqueProduto(double preco, int qtd, MerProduto produto, MerEstoque estoque, MerFornePrincipal forne, MerForneAlternativo forneAlternativo) {
         this.idMerEstoqueProduto = MerEstoqueProduto.id;
         MerEstoqueProduto.setId(id++);
         this.precoUnitario = preco;
