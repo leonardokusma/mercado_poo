@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author leona
  */
-public class MFuncionario extends MPessoa implements Serializable{
+public class MerFuncionario extends MerPessoa implements Serializable{
 
     private int idFuncionario;
     private int idCargo;
@@ -19,7 +19,7 @@ public class MFuncionario extends MPessoa implements Serializable{
     private int idContato;
     private Date admissao;
 
-    public MFuncionario(String nome, String cpf, Date nascimento, int idFuncionario, int idCargo, int idEndereco, int idContato, Date admissao) {
+    public MerFuncionario(String nome, String cpf, Date nascimento, int idFuncionario, int idCargo, int idEndereco, int idContato, Date admissao) {
         super(nome, cpf, nascimento);
         this.idFuncionario = idFuncionario;
         this.idCargo = idCargo;

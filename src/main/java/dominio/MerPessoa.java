@@ -6,13 +6,13 @@ package dominio;
 
 import java.util.Date;
 
-public class MPessoa {
+public class MerPessoa {
 
     private String nome;
     private String cpf;
     private Date nascimento;
 
-    public MPessoa(String nome, String cpf, Date nascimento) {
+    public MerPessoa(String nome, String cpf, Date nascimento) {
         this.nome = nome;
         this.cpf = cpf;
         this.nascimento = nascimento;

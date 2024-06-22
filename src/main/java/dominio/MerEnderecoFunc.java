@@ -10,7 +10,7 @@ package dominio;
  */
 public class MerEnderecoFunc {
     private int idMerEnderecoFunc;
-    private MFuncionario funcionario;
+    private MerFuncionario funcionario;
     private String rua;
     private long numero;
     private String bairro;
@@ -20,7 +20,7 @@ public class MerEnderecoFunc {
     private String cep;
     private String descricao;
 
-    public MerEnderecoFunc(int id, MFuncionario funcionario, String rua, long numero, String bairro, String cidade, String estado, String pontoRef, String cep, String descricao) {
+    public MerEnderecoFunc(int id, MerFuncionario funcionario, String rua, long numero, String bairro, String cidade, String estado, String pontoRef, String cep, String descricao) {
         this.idMerEnderecoFunc = id;
         this.funcionario = funcionario;
         this.rua = rua;
@@ -37,7 +37,7 @@ public class MerEnderecoFunc {
         return idMerEnderecoFunc;
     }
 
-    public MFuncionario getFuncionario() {
+    public MerFuncionario getFuncionario() {
         return funcionario;
     }
 
@@ -77,7 +77,7 @@ public class MerEnderecoFunc {
         this.idMerEnderecoFunc = id;
     }
 
-    public void setFuncionario(MFuncionario funcionario) {
+    public void setFuncionario(MerFuncionario funcionario) {
         this.funcionario = funcionario;
     }
 

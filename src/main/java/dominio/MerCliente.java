@@ -14,7 +14,7 @@ import dominio.MerContatoClien;
 import java.util.Date;
 
 
-public class MerCliente extends MPessoa{
+public class MerCliente extends MerPessoa{
     private int idMerCliente;
     private Date dataNascimento;
     private MerContatoClien contatoClien;
