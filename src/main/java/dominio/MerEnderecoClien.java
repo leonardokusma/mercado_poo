@@ -1,17 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package dominio;
 
 import java.io.Serializable;
 
-/**
- *
- * @author João Ferrari
- */
+
 public class MerEnderecoClien implements Serializable{
-    private int idEnderecoClien;
+    private static long id = 1;
+    private long idEnderecoClien;
     private String rua;
     private long numero;
     private String bairro;
@@ -21,7 +16,7 @@ public class MerEnderecoClien implements Serializable{
     private String cep;
     private String descricao;
 
-    public MerEnderecoClien(int id, String rua, long numero, String bairro, String cidade, String estado, String pontoRef, String cep, String descricao) {
+    public MerEnderecoClien( String rua, long numero, String bairro, String cidade, String estado, String pontoRef, String cep, String descricao) {
         this.idEnderecoClien = id;
         this.rua = rua;
         this.numero = numero;
@@ -33,7 +28,11 @@ public class MerEnderecoClien implements Serializable{
         this.descricao = descricao;
     }
 
-    public int getIdEnderecoClien() {
+    public static void setId(long id) {
+        MerEnderecoClien.id = id;
+    }
+
+    public long getIdEnderecoClien() {
         return idEnderecoClien;
     }
 

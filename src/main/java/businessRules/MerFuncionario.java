@@ -66,22 +66,29 @@ public class MerFuncionario {
         }
         System.out.println("DIGITE A DATA DE NASCIMENTO DO FUNCIONARIO:");
         Date nascimento = DataFormatador.datas(sc.nextLine());
+        //selecionando um cargo dos já existente no banco
         System.out.println("SELECIONE UM CARGO:");
         for (dominio.Cargo cargo : dominio.Banco.getCargos()) {
             System.out.println(cargo);
         }
         long idCargo = sc.nextLong();
         dominio.MerEnderecoFunc endereco  = MerEnderecoFuncionario.cadastroEndereco();
+        
         // cadastro do contato do funcionario
         System.out.println("DIGITE O TELEFONE DO FUNCIONARIO:");
         String telefone = sc.nextLine();
         System.out.println("DIGITE O TELEFONE DO SETOR DO FUNCIONARIO:");
         String telefoneEmpresa = sc.nextLine();
-        System.out.println("DIGITE O EMAIL DO CLIENTE:");
+        System.out.println("DIGITE O EMAIL DO Funcionario:");
         String email = sc.nextLine();
         dominio.MerContatoFunc contato = new dominio.MerContatoFunc(telefone, telefoneEmpresa, email);
-        
-        return new dominio.MerFuncionario(nome, cpf, nascimento,banco.buscaCargo(idCargo) , endereco, contato, nascimento);
+        System.out.println("DIGITE A DATA DE ADMISSAO DO FUNCIONARIO:");
+        Date admissao = DataFormatador.datas(sc.nextLine());
+        dominio.MerFuncionario funcionario = new dominio.MerFuncionario(nome, cpf, nascimento,banco.buscaCargo(idCargo) , endereco, contato, admissao);
+        if(banco.isRegistroFuncionario(funcionario.getCpf())){
+            return null;
+        }
+        return funcionario;
     }
 
 }

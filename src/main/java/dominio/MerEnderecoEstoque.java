@@ -14,7 +14,7 @@ public class MerEnderecoEstoque implements Serializable{
     private String pontoRef;
     private long numero;
 
-    public MerEnderecoEstoque(String rua, String bairro, String cidade, String estado, String cep) {
+    public MerEnderecoEstoque(String rua, String bairro, String cidade, String estado, String cep, long numero) {
         this.idMerEnderecoEstoque = MerEnderecoEstoque.id;
         MerEnderecoEstoque.setId(id++);
         this.rua = rua;
@@ -22,6 +22,7 @@ public class MerEnderecoEstoque implements Serializable{
         this.cidade = cidade;
         this.estado = estado;
         this.cep = cep;
+        this.numero = numero;
     }
     
      public MerEnderecoEstoque(String rua, String bairro, String cidade, String estado, String cep, String pontoRef) {

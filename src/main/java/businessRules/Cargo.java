@@ -18,7 +18,14 @@ public class Cargo {
         String descricao = sc.nextLine();
         System.out.println("INFORME O SALARIO:");
         double salario = sc.nextDouble();
-        return new dominio.Cargo(apelido, descricao, salario);
+        dominio.Cargo cargo = new dominio.Cargo(apelido, descricao, salario);
+        if(dominio.Banco.isRegistroCargo(apelido)){
+            System.out.println("Cargo ja existe!");
+            return null;
+        }
+        return cargo;
+        
+        
     }
     
 }

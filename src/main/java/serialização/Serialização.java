@@ -12,7 +12,7 @@ public class Serialização {
     
     
     public static void main(String[] args) {
-        Cargo cargo = new Cargo(1,"Gerente", "diretoria", 10550.20);
+        Cargo cargo = new Cargo("Gerente", "diretoria", 10550.20);
         serializar(cargo,"C:/Users/leona/OneDrive/Documentos/NetBeansProjects/2914-java-screenmatch-listas-colecoes2/mercado/src/main/java/serialização/teste.txt");
     
     }

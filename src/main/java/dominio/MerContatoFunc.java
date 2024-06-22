@@ -8,21 +8,16 @@ import java.io.Serializable;
  * @author João Ferrari
  */
 public class MerContatoFunc implements Serializable{
-    private int idMerContatoFunc;
+    private long idMerContatoFunc;
     private MerFuncionario funcionario;
     private String telefone;
     private String telefoneEmp;
     private String email;
 
-    public MerContatoFunc(int id, String telefone, String telefoneEmpresa, String email) {
-        this.idMerContatoFunc = id;
+    public MerContatoFunc(String telefone, String telefoneEmpresa, String email) {
         this.telefone = telefone;
         this.telefoneEmp = telefoneEmpresa;
         this.email = email;
-    }
-
-    public int getIdMerContatoFunc() {
-        return idMerContatoFunc;
     }
 
     public MerFuncionario getFuncionario() {
