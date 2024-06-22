@@ -1,10 +1,14 @@
+
 package dominio;
 
 import java.io.Serializable;
 
+
+
 public class Cargo implements Serializable {
 
     private static Integer idCargo;
+
     private String cargo;
     private String descricao;
     private double salario;
@@ -48,10 +52,13 @@ public class Cargo implements Serializable {
         this.salario = salario;
     }
 
+    public void setIdCargo(int id) {
+        this.idCargo = id;
+    }
+
     @Override
     public String toString() {
         return "Cargo{" + "cargo=" + cargo + ", descricao=" + descricao + ", salario=" + salario + '}';
     }
-    
 
 }

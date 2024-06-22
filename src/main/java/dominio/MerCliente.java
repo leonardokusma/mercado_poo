@@ -4,23 +4,32 @@
  */
 package dominio;
 
+
 import java.util.Date;
 
-public class MerCliente extends MPessoa {
+import dominio.MerEnderecoClien;
+import dominio.MerContatoClien;
+import java.util.Date;
 
+
+public class MerCliente extends MPessoa{
     private int idMerCliente;
-    private int idContato;
-    private int idEndereco;
+    private Date dataNascimento;
+    private MerContatoClien contatoClien;
+    private MerEnderecoClien enderecoClien;
 
-    MerCliente(String nome, String cpf, Date data, int idMerCliente, int idContato, int idEndereco) {
-        super(nome, cpf, data);
-        this.idContato = idContato;
-        this.idEndereco = idEndereco;
+    public MerCliente(String nome, String cpf, Date dataNascimento, MerContatoClien contato, MerEnderecoClien endereco) {
+        super(nome, cpf,dataNascimento);
+        this.dataNascimento = dataNascimento;
+        this.contatoClien = contato;
+        this.enderecoClien = endereco;
+
     }
 
     public int getIdMerCliente() {
         return idMerCliente;
     }
+
 
     public void setIdMerCliente(int idMerCliente) {
         this.idMerCliente = idMerCliente;
@@ -42,4 +51,24 @@ public class MerCliente extends MPessoa {
         this.idEndereco = idEndereco;
     }
 
+
+
+    public MerContatoClien getMerContatoClien() {
+        return contatoClien;
+    }
+
+    public MerEnderecoClien getMerEnderecoClien() {
+        return enderecoClien;
+    }
+
+    public void setMerContatoClien(MerContatoClien merContatoClien) {
+        this.contatoClien = merContatoClien;
+    }
+
+    public void setMerEnderecoClien(MerEnderecoClien merEnderecoClien) {
+        this.enderecoClien = merEnderecoClien;
+    }
+    
+    
+    
 }

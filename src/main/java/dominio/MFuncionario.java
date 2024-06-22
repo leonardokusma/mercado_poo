@@ -4,13 +4,21 @@
  */
 package dominio;
 
+<<<<<<< HEAD
+=======
+import java.io.Serializable;
+>>>>>>> 681521f62cac8b3b8b71f9785dfdd834434d8ac8
 import java.util.Date;
 
 /**
  *
  * @author leona
  */
+<<<<<<< HEAD
 public class MFuncionario extends MPessoa {
+=======
+public class MFuncionario extends MPessoa implements Serializable{
+>>>>>>> 681521f62cac8b3b8b71f9785dfdd834434d8ac8
 
     private int idFuncionario;
     private int idCargo;
