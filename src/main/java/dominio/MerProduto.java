@@ -9,7 +9,7 @@ public class MerProduto implements Serializable{
     private String nome;
     private String descricao;
 
-    MerProduto(String nome, String descricao) {
+    public MerProduto(String nome, String descricao) {
         this.idMerProduto = MerProduto.id;
         MerVenda.setId(id++);
         this.nome = nome;
@@ -43,7 +43,10 @@ public class MerProduto implements Serializable{
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return  "id: " + idMerProduto + ", nome=" + nome + ", descricao=" + descricao;
+    }
 
 }

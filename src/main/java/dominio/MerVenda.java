@@ -3,7 +3,8 @@ package dominio;
 import java.io.Serializable;
 import java.util.Date;
 
-public class MerVenda implements Serializable{
+public class MerVenda implements Serializable {
+
     private static long id = 1;
     private long idMerVenda;
     private MerTipoPagamento tipoPagamento;
@@ -14,8 +15,14 @@ public class MerVenda implements Serializable{
     private String log;
     private long desconto;
     private int qtdVenda;
-    
-    MerVenda(MerTipoPagamento tipoPagamento,MerFuncionario funcionario,MerCliente cliente, double valor, int qtdVenda){
+
+    public MerVenda() {
+        this.idMerVenda = MerVenda.id;
+        MerVenda.setId(id++);
+        this.data = new Date();
+    }
+
+    public MerVenda(MerTipoPagamento tipoPagamento, MerFuncionario funcionario, MerCliente cliente, double valor, int qtdVenda) {
         this.idMerVenda = MerVenda.id;
         MerVenda.setId(id++);
         this.tipoPagamento = tipoPagamento;
@@ -93,5 +100,5 @@ public class MerVenda implements Serializable{
     public void setQtdVenda(int qtdVenda) {
         this.qtdVenda = qtdVenda;
     }
-    
+
 }
