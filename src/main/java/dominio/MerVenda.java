@@ -7,7 +7,7 @@ public class MerVenda implements Serializable {
 
     private static long id = 1;
     private long idMerVenda;
-    private MerTipoPagamento tipoPagamento;
+    private String tipoPagamento;
     private MerFuncionario funcionario;
     private MerCliente cliente;
     private double valor;
@@ -22,7 +22,7 @@ public class MerVenda implements Serializable {
         this.data = new Date();
     }
 
-    public MerVenda(MerTipoPagamento tipoPagamento, MerFuncionario funcionario, MerCliente cliente, double valor, int qtdVenda) {
+    public MerVenda(String tipoPagamento, MerFuncionario funcionario, MerCliente cliente, double valor, int qtdVenda) {
         this.idMerVenda = MerVenda.id;
         MerVenda.setId(id++);
         this.tipoPagamento = tipoPagamento;
@@ -37,11 +37,11 @@ public class MerVenda implements Serializable {
         MerVenda.id = id;
     }
 
-    public MerTipoPagamento getTipoPagamento() {
+    public String getTipoPagamento() {
         return tipoPagamento;
     }
 
-    public void setTipoPagamento(MerTipoPagamento tipoPagamento) {
+    public void setTipoPagamento(String tipoPagamento) {
         this.tipoPagamento = tipoPagamento;
     }
 

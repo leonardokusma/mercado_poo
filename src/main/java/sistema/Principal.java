@@ -12,6 +12,9 @@ public class Principal {
         MenuAtendenteDeCaixa caixa = new MenuAtendenteDeCaixa();
         MenuCargo cargo = new MenuCargo();
         MenuHistoricoDeCompras compras = new MenuHistoricoDeCompras();
+        MenuOpcoesVendas vendas = new MenuOpcoesVendas();
+        GerarPedidoDeCompra pedido = new GerarPedidoDeCompra();
+        
         String palavra = "";
         while (!palavra.equals("sair")) {
             System.out.println("1 CADASTRO DE CLIENTES");
@@ -19,6 +22,8 @@ public class Principal {
             System.out.println("3 GERENCIAMENTO DE ESTOQUE");
             System.out.println("4 CADASTRO DE CARGOS");
             System.out.println("5 HISTORICO DE COPRAS");
+            System.out.println("6 VENDER");
+            System.out.println("7 gerar pedido de compra");
             System.out.println("SELECIONE UMA OPCAO:");
             palavra = sc.nextLine();
             switch (palavra) {
@@ -42,10 +47,18 @@ public class Principal {
                 case "historico de compras":
                     compras.consulta(banco);
                     break;
-
+                    
+                case "vender":
+                    vendas.venda(banco);
+                    break;
+                case "gerar pedido de compra":
+                    pedido.gerarRelatorio(banco);
+                    break;
+   
                 default:
-                    System.out.println("fuck");
+                    System.out.println("OPCAO INVALIDA!");
             }
+             serialização.Serialização.serializar(banco,"C:/Users/leona/OneDrive/Documentos/NetBeansProjects/2914-java-screenmatch-listas-colecoes2/mercado/src/main/java/serialização/banco.txt");
         }
         System.out.println("1 CADASTRO DE CLIENTES");
         System.out.println("2 CADASTRO DE FUNCIONARIOS");

@@ -1,10 +1,9 @@
-
 package sistema;
 
 import java.util.Scanner;
 
-
 public class MenuHistoricoDeVendas {
+
     public void consulta(dominio.Banco banco) {
         Scanner sc = new Scanner(System.in);
         System.out.println("INFORME O CPF DO FUNCIONARIO:");
@@ -15,5 +14,5 @@ public class MenuHistoricoDeVendas {
             }
         }
     }
-    
+
 }

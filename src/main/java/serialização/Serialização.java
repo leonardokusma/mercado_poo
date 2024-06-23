@@ -11,13 +11,13 @@ import java.util.Collection;
 public class Serialização {
     
     
-    public static void main(String[] args) {
-        Cargo cargo = new Cargo("Gerente", "diretoria", 10550.20);
-        serializar(cargo,"C:/Users/leona/OneDrive/Documentos/NetBeansProjects/2914-java-screenmatch-listas-colecoes2/mercado/src/main/java/serialização/teste.txt");
-    
-    }
+//    public static void main(String[] args) {
+//        Cargo cargo = new Cargo("Gerente", "diretoria", 10550.20);
+//        serializar(cargo,"C:/Users/leona/OneDrive/Documentos/NetBeansProjects/2914-java-screenmatch-listas-colecoes2/mercado/src/main/java/serialização/banco.txt");
+//    
+//    }
 
-    private static <T> void serializar(T objeto, String path) {
+    public static <T> void serializar(T objeto, String path) {
         Path caminho = Paths.get(path.toString());
         try (ObjectOutputStream oos = new ObjectOutputStream(Files.newOutputStream(caminho))){
             oos.writeObject(objeto);
