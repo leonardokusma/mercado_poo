@@ -11,12 +11,14 @@ public class Principal {
         MenuGerenciamentoDeEstoque estoque = new MenuGerenciamentoDeEstoque();
         MenuAtendenteDeCaixa caixa = new MenuAtendenteDeCaixa();
         MenuCargo cargo = new MenuCargo();
+        MenuHistoricoDeCompras compras = new MenuHistoricoDeCompras();
         String palavra = "";
         while (!palavra.equals("sair")) {
             System.out.println("1 CADASTRO DE CLIENTES");
             System.out.println("2 CADASTRO DE FUNCIONARIOS");
             System.out.println("3 GERENCIAMENTO DE ESTOQUE");
             System.out.println("4 CADASTRO DE CARGOS");
+            System.out.println("5 HISTORICO DE COPRAS");
             System.out.println("SELECIONE UMA OPCAO:");
             palavra = sc.nextLine();
             switch (palavra) {
@@ -35,6 +37,10 @@ public class Principal {
                     
                 case "cadastro de cargos":
                     cargo.cadastrarCargo(banco);
+                    break;
+                    
+                case "historico de compras":
+                    compras.consulta(banco);
                     break;
 
                 default:
