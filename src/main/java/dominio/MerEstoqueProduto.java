@@ -13,15 +13,14 @@ public class MerEstoqueProduto implements Serializable{
     private MerFornePrincipal forne;
     private MerForneAlternativo forneAlternativo;
 
-    public MerEstoqueProduto(double preco, int qtd, MerProduto produto, MerEstoque estoque, MerFornePrincipal forne, MerForneAlternativo forneAlternativo) {
+    public MerEstoqueProduto(double preco, int qtd, MerProduto produto, MerEstoque estoque) {
         this.idMerEstoqueProduto = MerEstoqueProduto.id;
         MerEstoqueProduto.setId(id++);
         this.precoUnitario = preco;
         this.qtd = qtd;
         this.produto = produto;
         this.estoque = estoque;
-        this.forne = forne;
-        this.forneAlternativo = forneAlternativo;
+
     }
 
     public static void setId(long id) {
