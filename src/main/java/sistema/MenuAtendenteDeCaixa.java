@@ -2,17 +2,17 @@ package sistema;
 
 import java.util.Scanner;
 
-public class MenuCadastroCliente {
+public class MenuAtendenteDeCaixa {
 
-    public static void incluirCliente() {
-        dominio.Banco.adicionaCliente(businessRules.MerCliente.cadastrar());
+    public static void incluirFuncionario() {
+        dominio.Banco.adicionaFuncionario(businessRules.MerFuncionario.cadastrarFuncionario());
     }
 
     public static void consultar(dominio.Banco banco) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("INFORME O CPF DO CLIENTE");
+        System.out.println("INFORME O CPF DO FUNCIONARIO");
         String cpf = sc.nextLine();
-        System.out.println(banco.buscaCliente(cpf));
+        System.out.println(banco.buscaFuncionario(cpf));
     }
 
     public static void remover(dominio.Banco banco) {
@@ -20,59 +20,60 @@ public class MenuCadastroCliente {
         System.out.println("------REMOVE CLIENTE------");
         System.out.println("INFORME O CPF DO CLIENTE");
         String cpf = sc.nextLine();
-        dominio.Banco.removeCliente(banco.buscaCliente(cpf).getIdMerCliente());
+        dominio.Banco.removeFuncionario((int) banco.buscaFuncionario(cpf).getIdFuncionario() - 1);
     }
-    
-    public static void Atualizar(dominio.Banco banco){
+
+    public static void Atualizar(dominio.Banco banco) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("INFORME O CPF DO CLIENTE:");
+        System.out.println("INFORME O CPF DO Funcionario:");
         String cpf = sc.nextLine();
-        dominio.MerCliente cliente  = banco.buscaCliente(cpf);
+        dominio.MerFuncionario funcionario = banco.buscaFuncionario(cpf);
         System.out.println("Informe o que deseja atualizar:");
         String atributo = sc.nextLine();
-        switch(atributo){
+        switch (atributo) {
             case "cpf":
-                 System.out.println("INFORME O CPF DO CLIENTE:");
-                 cliente.setCpf(sc.nextLine());
-                 break;
+                System.out.println("INFORME O CPF DO CLIENTE:");
+                funcionario.setCpf(sc.nextLine());
+                break;
             case "nome":
                 System.out.println("INFORME O NOME DO CLIENTE:");
-                cliente.setNome(sc.nextLine());
+                funcionario.setNome(sc.nextLine());
                 break;
             case "nascimento":
                 System.out.println("INFORME A DATA DE NASCIMENTO");
-                cliente.setDataNascimento(businessRules.DataFormatador.datas(sc.nextLine()));
+                funcionario.setNascimento(businessRules.DataFormatador.datas(sc.nextLine()));
                 break;
             default:
                 System.out.println("DECIDAAAAAAAAA");
         }
     }
-    
-    public void exibirMenu(){
-        dominio.Banco banco = new  dominio.Banco();
+
+    public void exibirMenu() {
+        dominio.Banco banco = new dominio.Banco();
         Scanner sc = new Scanner(System.in);
-        System.out.println("1. INCLUIR NOVO CLIENTE");
-        System.out.println("2. CONSULTAR CLIENTE");
-        System.out.println("3. ATUALIZAR CLIENTE");
-        System.out.println("4. EXCLUIR CLIENTE");
+        System.out.println("1. INCLUIR NOVO FUNCIONARIO");
+        System.out.println("2. CONSULTAR FUNCIONARIO");
+        System.out.println("3. ATUALIZAR FUNCIONARIO");
+        System.out.println("4. EXCLUIR FUNCIONARIO");
         System.out.println("SELECIONE UMA OPCAO:");
         int opcao = sc.nextInt();
         sc.nextLine();
-        switch(opcao){
+        switch (opcao) {
             case 1:
-                incluirCliente();
+                incluirFuncionario();
                 break;
             case 2:
                 consultar(banco);
                 break;
-            case 3: 
-                Atualizar(banco);
+            case 3:
+                remover(banco);
                 break;
             case 4:
-                remover(banco);
+                Atualizar(banco);
                 break;
             default:
                 System.out.println("OPCAO INVALIDA");
         }
     }
+
 }

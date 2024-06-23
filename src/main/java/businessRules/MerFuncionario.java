@@ -71,7 +71,9 @@ public class MerFuncionario {
         for (dominio.Cargo cargo : dominio.Banco.getCargos()) {
             System.out.println(cargo);
         }
+        System.out.println("INFORME O ID");
         long idCargo = sc.nextLong();
+        sc.nextLine();
         dominio.MerEnderecoFunc endereco  = MerEnderecoFuncionario.cadastroEndereco();
         
         // cadastro do contato do funcionario

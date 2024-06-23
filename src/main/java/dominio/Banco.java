@@ -78,6 +78,15 @@ public class Banco implements Serializable {
         }
         return null;
     }
+    
+    public MerFuncionario buscaFuncionario(String cpf){
+        for(MerFuncionario funcionario : Banco.getFuncionario()){
+            if(funcionario.getCpf().equals(cpf)){
+                return funcionario;
+            }
+        }
+        return null;
+    }
 
     public MerVenda buscaVendaCliente(long id) {
         for (MerVenda venda : Banco.getVendas()) {
@@ -132,6 +141,10 @@ public class Banco implements Serializable {
     public Cargo buscaCargo(long id){
         return Banco.getCargos().get((int) id - 1 );
     }
+    
+    public MerEstoque buscaEstoque(long id){
+        return Banco.getEstoques().get((int)id - 1);
+    }
 
     public static void adicionaCliente(MerCliente cliente) {
         Banco.getClientes().add(cliente);
@@ -159,6 +172,10 @@ public class Banco implements Serializable {
 
     public static void adicionaVenda(MerVenda venda) {
         Banco.getVendas().add(venda);
+    }
+    
+    public static void adicionaCargo(Cargo cargo){
+        Banco.getCargos().add(cargo);
     }
 
     public static MerVenda removeVenda(long id) {

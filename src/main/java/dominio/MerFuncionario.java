@@ -72,7 +72,7 @@ public class MerFuncionario extends MerPessoa implements Serializable{
 
     @Override
     public String toString() {
-        return "MerFuncionario{" + "idFuncionario=" + idFuncionario + ", cargo=" + cargo + ", endereco=" + endereco + ", contato=" + contato + ", admissao=" + admissao + '}';
+        return "MerFuncionario{" + "idFuncionario: " + idFuncionario + ", cargo: " + cargo + ", endereco: " + endereco + ", contato:" + contato + ", admissao:" + admissao + '}';
     }
 
 }
